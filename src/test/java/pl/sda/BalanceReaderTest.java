@@ -21,13 +21,13 @@ class BalanceReaderTest {
 
         Assertions.assertTrue(
                 data.getIncomes()
-                        .contains(new BigDecimal("20000")));
+                        .contains(new BigDecimal("20000.0")));
 
         Assertions.assertEquals(
                 data.getOutcomes().size(), 16);
 
         Assertions.assertTrue(
                 data.getOutcomes()
-                        .contains(new BigDecimal("126")));
+                        .contains(new BigDecimal("126.0")));
     }
 }

@@ -14,6 +14,7 @@ public class BalanceReader {
 
     BalanceData read() throws IOException, InvalidFormatException {
 
+        BalanceData result = new BalanceData();
         try (InputStream inp = new FileInputStream(FILE_PATH)) {
             Workbook wb = WorkbookFactory.create(inp);
             Sheet sheet = wb.getSheetAt(0);
@@ -23,11 +24,14 @@ public class BalanceReader {
                 BigDecimal income = getCellValue(row, 1);
                 BigDecimal outcome = getCellValue(row, 3);
 
-                System.out.println("Dochód: " + income);
-                System.out.println("Wydatek: " + outcome);
+                if (!income.equals(BigDecimal.ZERO))
+                    result.getIncomes().add(income);
+
+                if (!outcome.equals(BigDecimal.ZERO))
+                    result.getOutcomes().add(outcome);
             }
         }
-        return null;
+        return result;
     }
 
 
