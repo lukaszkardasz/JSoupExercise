@@ -22,7 +22,7 @@ class BalanceCalculatorTest {
         //when
         BigDecimal balance = calculator.calculate(data);
         //then
-        Assertions.assertEquals(balance, result);
+        Assertions.assertEquals(result, balance);
     }
 
     static Stream<Arguments> getData() {

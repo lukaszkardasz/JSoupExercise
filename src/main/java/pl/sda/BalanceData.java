@@ -1,12 +1,13 @@
 package pl.sda;
 
 import java.math.BigDecimal;
+import java.util.ArrayList;
 import java.util.List;
 
 public class BalanceData {
 
-    private List<BigDecimal> incomes;
-    private List<BigDecimal> outcomes;
+    private List<BigDecimal> incomes = new ArrayList<>();
+    private List<BigDecimal> outcomes = new ArrayList<>();
 
     BalanceData(){
     }
