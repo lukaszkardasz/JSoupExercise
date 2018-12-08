@@ -1,8 +1,10 @@
 package pl.sda;
 
+import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
+import java.io.IOException;
 import java.math.BigDecimal;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -10,7 +12,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class BalanceReaderTest {
 
     @Test
-    void read() {
+    void read() throws IOException, InvalidFormatException {
         BalanceReader reader = new BalanceReader();
         BalanceData data = reader.read();
 
